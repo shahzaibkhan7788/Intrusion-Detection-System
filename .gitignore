@@ -1,0 +1,42 @@
+# --- Files to exclude from Git (Currently in your Stage) ---
+.circleci/
+.github/
+.dockerignore
+.editorconfig
+.flake8
+.gitatttributes
+.nojekyll
+poetry.lock
+poetry.toml
+
+# --- Data and Results (Large Files) ---
+data/
+data_preprocessed/
+data_raw/
+models/
+reports/
+
+# --- Python & IDE ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.ipynb_checkpoints/
+.vscode/
+.history/
+.env
+.venv
+env/
+venv/
+
+# --- Specific Scripts to Ignore ---
+forest_example.py
+regression_example.py
+census_example.py
+multi_regression_example.py
+
+# --- Build & Distribution ---
+build/
+dist/
+*.egg-info/
+.eggs/
