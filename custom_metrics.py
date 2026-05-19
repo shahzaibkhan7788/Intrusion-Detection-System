@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import numpy as np
 from pytorch_tabnet.metrics import Metric
+from sklearn.preprocessing import label_binarize
 from sklearn.metrics import average_precision_score, f1_score, precision_score, recall_score
 
 
@@ -96,9 +97,10 @@ class F1Micro(Metric):
 
 
 class AveragePrecision(Metric):
-    """Average Precision / PR-AUC for binary classification.
+    """Average Precision / PR-AUC for binary or multi-class classification.
 
-    Assumes y_score is array of shape (n_samples, 2) with positive class in column 1.
+    - Binary: uses the positive-class column when available, otherwise the single column.
+    - Multi-class: macro-averaged AP over one-vs-rest binarized targets.
     """
 
     def __init__(self):
@@ -106,13 +108,57 @@ class AveragePrecision(Metric):
         self._maximize = True
 
     def __call__(self, y_true, y_score):
-        if y_score.shape[1] < 2:
-            # Fallback: use the single-column score directly
-            pos_scores = y_score[:, 0]
-        else:
-            pos_scores = y_score[:, 1]
-        return average_precision_score(y_true, pos_scores)
+        y_true = np.asarray(y_true)
+        y_score = np.asarray(y_score)
 
+        # Ensure 2D score array
+        if y_score.ndim == 1:
+            y_score = y_score.reshape(-1, 1)
+
+        n_classes = y_score.shape[1]
+
+        # Binary shortcuts
+        if n_classes == 1:
+            return average_precision_score(y_true, y_score[:, 0])
+        if n_classes == 2 and np.unique(y_true).size <= 2:
+            return average_precision_score(y_true, y_score[:, 1])
+
+        # Multi-class: one-vs-rest macro AP
+        classes = np.arange(n_classes)
+        y_true_bin = label_binarize(y_true, classes=classes)
+        return average_precision_score(y_true_bin, y_score, average="macro")
+
+
+class PrecisionWeighted(Metric):
+    def __init__(self):
+        self._name = "precision_weighted"
+        self._maximize = True
+
+    def __call__(self, y_true, y_score):
+        preds = np.argmax(y_score, axis=1)
+        return precision_score(y_true, preds, average="weighted", zero_division=0)
+
+
+class RecallWeighted(Metric):
+    def __init__(self):
+        self._name = "recall_weighted"
+        self._maximize = True
+
+    def __call__(self, y_true, y_score):
+        preds = np.argmax(y_score, axis=1)
+        return recall_score(y_true, preds, average="weighted", zero_division=0)
+
+
+class F1Weighted(Metric):
+    def __init__(self):
+        self._name = "f1_weighted"
+        self._maximize = True
+
+    def __call__(self, y_true, y_score):
+        preds = np.argmax(y_score, axis=1)
+        return f1_score(y_true, preds, average="weighted", zero_division=0)
+    
+    
 
 # Optional: confusion matrix helper (not a Metric because it is not scalar)
 def confusion_matrix_counts(y_true, y_pred):

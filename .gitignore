@@ -10,6 +10,8 @@ poetry.lock
 poetry.toml
 
 # --- Data and Results (Large Files) ---
+filter-data/
+attack_pruning_search/
 data/
 data_preprocessed/
 data_raw/
@@ -34,6 +36,7 @@ forest_example.py
 regression_example.py
 census_example.py
 multi_regression_example.py
+repomix-output.xml
 
 # --- Build & Distribution ---
 build/
