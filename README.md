@@ -88,7 +88,7 @@ Our commits follow the rules presented [here](https://www.conventionalcommits.or
 
 - TabNetClassifier : binary classification and multi-class classification problems
 - TabNetRegressor : simple and multi-task regression problems
-- TabNetMultiTaskClassifier:  multi-task multi-classification problems
+- TabNetMultiTaskClassifier:  multi-task multi-classification problems solver
 
 # How to use it?
 
