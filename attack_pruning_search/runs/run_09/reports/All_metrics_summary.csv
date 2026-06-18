@@ -1,0 +1,15 @@
+metric,value
+dataset_name,All
+experiment_run_index,9
+strategy_used,current_plus_mixed_pair
+device,cuda
+total_rows,13818903
+feature_count,68
+pretrain_time_sec,5763.122692108154
+finetune_time_sec,65119.3594686985
+best_cost,0.987489517083212
+best_step,
+test_f1_macro,0.8775448614051171
+test_precision_macro,0.8729671280813299
+test_recall_macro,0.9813852397399423
+resume_used_existing_pretrain,False

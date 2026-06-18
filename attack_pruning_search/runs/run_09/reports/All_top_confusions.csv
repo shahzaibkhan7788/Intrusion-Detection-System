@@ -1,0 +1,14 @@
+true_label,predicted_label,count
+Benign,DoS attacks-Hulk,357
+Benign,DDoS attacks-LOIC-HTTP,331
+Benign,Bot,175
+Benign,SSH-Bruteforce,65
+DDoS attacks-LOIC-HTTP,Benign,54
+Benign,DoS attacks-SlowHTTPTest,52
+DDOS attack-LOIC-UDP,Benign,20
+Bot,Benign,11
+Benign,DDOS attack-HOIC,10
+SSH-Bruteforce,Benign,10
+DDoS attacks-LOIC-HTTP,DDOS attack-LOIC-UDP,7
+SSH-Bruteforce,DoS attacks-SlowHTTPTest,7
+DDOS attack-LOIC-UDP,DDoS attacks-LOIC-HTTP,5

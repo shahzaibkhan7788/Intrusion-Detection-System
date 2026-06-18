@@ -1,0 +1,738 @@
+{
+  "dataset_name": "All",
+  "experiment_run_index": 9,
+  "strategy_used": "current_plus_mixed_pair",
+  "device": "cuda",
+  "total_rows": 13818903,
+  "feature_count": 68,
+  "feature_names": [
+    "ACK Flag Cnt",
+    "Active Max",
+    "Active Mean",
+    "Active Min",
+    "Active Std",
+    "Bwd Header Len",
+    "Bwd IAT Max",
+    "Bwd IAT Mean",
+    "Bwd IAT Min",
+    "Bwd IAT Std",
+    "Bwd IAT Tot",
+    "Bwd Pkt Len Max",
+    "Bwd Pkt Len Mean",
+    "Bwd Pkt Len Min",
+    "Bwd Pkt Len Std",
+    "Bwd Pkts/s",
+    "Bwd Seg Size Avg",
+    "Down/Up Ratio",
+    "Dst Port",
+    "ECE Flag Cnt",
+    "FIN Flag Cnt",
+    "Flow Byts/s",
+    "Flow Duration",
+    "Flow IAT Max",
+    "Flow IAT Mean",
+    "Flow IAT Min",
+    "Flow IAT Std",
+    "Flow Pkts/s",
+    "Fwd Act Data Pkts",
+    "Fwd Header Len",
+    "Fwd IAT Max",
+    "Fwd IAT Mean",
+    "Fwd IAT Min",
+    "Fwd IAT Std",
+    "Fwd IAT Tot",
+    "Fwd PSH Flags",
+    "Fwd Pkt Len Max",
+    "Fwd Pkt Len Mean",
+    "Fwd Pkt Len Min",
+    "Fwd Pkt Len Std",
+    "Fwd Pkts/s",
+    "Fwd Seg Size Avg",
+    "Fwd Seg Size Min",
+    "Idle Max",
+    "Idle Mean",
+    "Idle Min",
+    "Idle Std",
+    "Init Bwd Win Byts",
+    "Init Fwd Win Byts",
+    "PSH Flag Cnt",
+    "Pkt Len Max",
+    "Pkt Len Mean",
+    "Pkt Len Min",
+    "Pkt Len Std",
+    "Pkt Len Var",
+    "Pkt Size Avg",
+    "Protocol",
+    "RST Flag Cnt",
+    "SYN Flag Cnt",
+    "Subflow Bwd Byts",
+    "Subflow Bwd Pkts",
+    "Subflow Fwd Byts",
+    "Subflow Fwd Pkts",
+    "Tot Bwd Pkts",
+    "Tot Fwd Pkts",
+    "TotLen Bwd Pkts",
+    "TotLen Fwd Pkts",
+    "URG Flag Cnt"
+  ],
+  "dropped_non_numeric_columns": [],
+  "removed_attacks": [
+    "Brute Force -Web",
+    "Brute Force -XSS",
+    "DoS attacks-GoldenEye",
+    "DoS attacks-Slowloris",
+    "FTP-BruteForce",
+    "Infilteration",
+    "SQL Injection"
+  ],
+  "kept_attacks": [
+    "Bot",
+    "DDOS attack-HOIC",
+    "DDOS attack-LOIC-UDP",
+    "DDoS attacks-LOIC-HTTP",
+    "DoS attacks-Hulk",
+    "DoS attacks-SlowHTTPTest",
+    "SSH-Bruteforce"
+  ],
+  "classes": [
+    "Benign",
+    "Bot",
+    "DDOS attack-HOIC",
+    "DDOS attack-LOIC-UDP",
+    "DDoS attacks-LOIC-HTTP",
+    "DoS attacks-Hulk",
+    "DoS attacks-SlowHTTPTest",
+    "SSH-Bruteforce"
+  ],
+  "class_counts_train": {
+    "Benign": 10126627,
+    "Bot": 115628,
+    "DDOS attack-HOIC": 159089,
+    "DDOS attack-LOIC-UDP": 1384,
+    "DDoS attacks-LOIC-HTTP": 460953,
+    "DoS attacks-Hulk": 116159,
+    "DoS attacks-SlowHTTPTest": 44,
+    "SSH-Bruteforce": 75238
+  },
+  "class_counts_val": {
+    "Benign": 1265828,
+    "Bot": 14454,
+    "DDOS attack-HOIC": 19886,
+    "DDOS attack-LOIC-UDP": 173,
+    "DDoS attacks-LOIC-HTTP": 57619,
+    "DoS attacks-Hulk": 14520,
+    "DoS attacks-SlowHTTPTest": 6,
+    "SSH-Bruteforce": 9405
+  },
+  "class_counts_test": {
+    "Benign": 1265829,
+    "Bot": 14453,
+    "DDOS attack-HOIC": 19886,
+    "DDOS attack-LOIC-UDP": 173,
+    "DDoS attacks-LOIC-HTTP": 57619,
+    "DoS attacks-Hulk": 14520,
+    "DoS attacks-SlowHTTPTest": 5,
+    "SSH-Bruteforce": 9405
+  },
+  "split_coverage": {
+    "Benign": {
+      "train": 10126627,
+      "validation": 1265828,
+      "test": 1265829
+    },
+    "Bot": {
+      "train": 115628,
+      "validation": 14454,
+      "test": 14453
+    },
+    "DDOS attack-HOIC": {
+      "train": 159089,
+      "validation": 19886,
+      "test": 19886
+    },
+    "DDOS attack-LOIC-UDP": {
+      "train": 1384,
+      "validation": 173,
+      "test": 173
+    },
+    "DDoS attacks-LOIC-HTTP": {
+      "train": 460953,
+      "validation": 57619,
+      "test": 57619
+    },
+    "DoS attacks-Hulk": {
+      "train": 116159,
+      "validation": 14520,
+      "test": 14520
+    },
+    "DoS attacks-SlowHTTPTest": {
+      "train": 44,
+      "validation": 6,
+      "test": 5
+    },
+    "SSH-Bruteforce": {
+      "train": 75238,
+      "validation": 9405,
+      "test": 9405
+    }
+  },
+  "classes_missing_in_some_split": {},
+  "pretrain_time_sec": 5763.122692108154,
+  "finetune_time_sec": 65119.3594686985,
+  "best_cost": 0.987489517083212,
+  "best_step": null,
+  "test_f1_macro": 0.8775448614051171,
+  "test_precision_macro": 0.8729671280813299,
+  "test_recall_macro": 0.9813852397399423,
+  "confusion_matrix": [
+    [
+      1264839,
+      175,
+      10,
+      0,
+      331,
+      357,
+      52,
+      65
+    ],
+    [
+      11,
+      14442,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      19886,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      20,
+      0,
+      0,
+      148,
+      5,
+      0,
+      0,
+      0
+    ],
+    [
+      54,
+      0,
+      0,
+      7,
+      57558,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      14520,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      10,
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      9388
+    ]
+  ],
+  "classification_report": {
+    "Benign": {
+      "precision": 0.9999248972673673,
+      "recall": 0.9992179038400921,
+      "f1-score": 0.9995712755402224,
+      "support": 1265829.0
+    },
+    "Bot": {
+      "precision": 0.9880276390504208,
+      "recall": 0.9992389123365392,
+      "f1-score": 0.9936016511867906,
+      "support": 14453.0
+    },
+    "DDOS attack-HOIC": {
+      "precision": 0.9994973864093285,
+      "recall": 1.0,
+      "f1-score": 0.9997486300336835,
+      "support": 19886.0
+    },
+    "DDOS attack-LOIC-UDP": {
+      "precision": 0.9548387096774194,
+      "recall": 0.8554913294797688,
+      "f1-score": 0.9024390243902439,
+      "support": 173.0
+    },
+    "DDoS attacks-LOIC-HTTP": {
+      "precision": 0.9941962897709608,
+      "recall": 0.9989413214391086,
+      "f1-score": 0.9965631573935401,
+      "support": 57619.0
+    },
+    "DoS attacks-Hulk": {
+      "precision": 0.9760032264569469,
+      "recall": 1.0,
+      "f1-score": 0.9878559036636392,
+      "support": 14520.0
+    },
+    "DoS attacks-SlowHTTPTest": {
+      "precision": 0.078125,
+      "recall": 1.0,
+      "f1-score": 0.14492753623188406,
+      "support": 5.0
+    },
+    "SSH-Bruteforce": {
+      "precision": 0.9931238760181953,
+      "recall": 0.9981924508240297,
+      "f1-score": 0.9956517128009333,
+      "support": 9405.0
+    },
+    "macro avg": {
+      "precision": 0.8729671280813299,
+      "recall": 0.9813852397399423,
+      "f1-score": 0.8775448614051171,
+      "support": 1381890.0
+    }
+  },
+  "strongest_classes_by_f1": [
+    {
+      "class_name": "DDOS attack-HOIC",
+      "precision": 0.9994973864093285,
+      "recall": 1.0,
+      "f1_score": 0.9997486300336835,
+      "support": 19886,
+      "true_positive": 19886,
+      "false_positive": 10,
+      "false_negative": 0,
+      "predicted_as_class": 19896,
+      "class_accuracy": 1.0,
+      "top_confused_with": null,
+      "top_confusion_count": 0
+    },
+    {
+      "class_name": "Benign",
+      "precision": 0.9999248972673673,
+      "recall": 0.9992179038400921,
+      "f1_score": 0.9995712755402224,
+      "support": 1265829,
+      "true_positive": 1264839,
+      "false_positive": 95,
+      "false_negative": 990,
+      "predicted_as_class": 1264934,
+      "class_accuracy": 0.9992179038400921,
+      "top_confused_with": "DoS attacks-Hulk",
+      "top_confusion_count": 357
+    },
+    {
+      "class_name": "DDoS attacks-LOIC-HTTP",
+      "precision": 0.9941962897709608,
+      "recall": 0.9989413214391086,
+      "f1_score": 0.9965631573935401,
+      "support": 57619,
+      "true_positive": 57558,
+      "false_positive": 336,
+      "false_negative": 61,
+      "predicted_as_class": 57894,
+      "class_accuracy": 0.9989413214391086,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 54
+    },
+    {
+      "class_name": "SSH-Bruteforce",
+      "precision": 0.9931238760181953,
+      "recall": 0.9981924508240297,
+      "f1_score": 0.9956517128009333,
+      "support": 9405,
+      "true_positive": 9388,
+      "false_positive": 65,
+      "false_negative": 17,
+      "predicted_as_class": 9453,
+      "class_accuracy": 0.9981924508240297,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 10
+    },
+    {
+      "class_name": "Bot",
+      "precision": 0.9880276390504208,
+      "recall": 0.9992389123365392,
+      "f1_score": 0.9936016511867906,
+      "support": 14453,
+      "true_positive": 14442,
+      "false_positive": 175,
+      "false_negative": 11,
+      "predicted_as_class": 14617,
+      "class_accuracy": 0.9992389123365392,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 11
+    }
+  ],
+  "struggling_classes_by_f1": [
+    {
+      "class_name": "DoS attacks-SlowHTTPTest",
+      "precision": 0.078125,
+      "recall": 1.0,
+      "f1_score": 0.14492753623188406,
+      "support": 5,
+      "true_positive": 5,
+      "false_positive": 59,
+      "false_negative": 0,
+      "predicted_as_class": 64,
+      "class_accuracy": 1.0,
+      "top_confused_with": null,
+      "top_confusion_count": 0
+    },
+    {
+      "class_name": "DDOS attack-LOIC-UDP",
+      "precision": 0.9548387096774194,
+      "recall": 0.8554913294797688,
+      "f1_score": 0.9024390243902439,
+      "support": 173,
+      "true_positive": 148,
+      "false_positive": 7,
+      "false_negative": 25,
+      "predicted_as_class": 155,
+      "class_accuracy": 0.8554913294797688,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 20
+    },
+    {
+      "class_name": "DoS attacks-Hulk",
+      "precision": 0.9760032264569469,
+      "recall": 1.0,
+      "f1_score": 0.9878559036636392,
+      "support": 14520,
+      "true_positive": 14520,
+      "false_positive": 357,
+      "false_negative": 0,
+      "predicted_as_class": 14877,
+      "class_accuracy": 1.0,
+      "top_confused_with": null,
+      "top_confusion_count": 0
+    },
+    {
+      "class_name": "Bot",
+      "precision": 0.9880276390504208,
+      "recall": 0.9992389123365392,
+      "f1_score": 0.9936016511867906,
+      "support": 14453,
+      "true_positive": 14442,
+      "false_positive": 175,
+      "false_negative": 11,
+      "predicted_as_class": 14617,
+      "class_accuracy": 0.9992389123365392,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 11
+    },
+    {
+      "class_name": "SSH-Bruteforce",
+      "precision": 0.9931238760181953,
+      "recall": 0.9981924508240297,
+      "f1_score": 0.9956517128009333,
+      "support": 9405,
+      "true_positive": 9388,
+      "false_positive": 65,
+      "false_negative": 17,
+      "predicted_as_class": 9453,
+      "class_accuracy": 0.9981924508240297,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 10
+    }
+  ],
+  "top_confusions": [
+    {
+      "true_label": "Benign",
+      "predicted_label": "DoS attacks-Hulk",
+      "count": 357
+    },
+    {
+      "true_label": "Benign",
+      "predicted_label": "DDoS attacks-LOIC-HTTP",
+      "count": 331
+    },
+    {
+      "true_label": "Benign",
+      "predicted_label": "Bot",
+      "count": 175
+    },
+    {
+      "true_label": "Benign",
+      "predicted_label": "SSH-Bruteforce",
+      "count": 65
+    },
+    {
+      "true_label": "DDoS attacks-LOIC-HTTP",
+      "predicted_label": "Benign",
+      "count": 54
+    },
+    {
+      "true_label": "Benign",
+      "predicted_label": "DoS attacks-SlowHTTPTest",
+      "count": 52
+    },
+    {
+      "true_label": "DDOS attack-LOIC-UDP",
+      "predicted_label": "Benign",
+      "count": 20
+    },
+    {
+      "true_label": "Bot",
+      "predicted_label": "Benign",
+      "count": 11
+    },
+    {
+      "true_label": "Benign",
+      "predicted_label": "DDOS attack-HOIC",
+      "count": 10
+    },
+    {
+      "true_label": "SSH-Bruteforce",
+      "predicted_label": "Benign",
+      "count": 10
+    },
+    {
+      "true_label": "DDoS attacks-LOIC-HTTP",
+      "predicted_label": "DDOS attack-LOIC-UDP",
+      "count": 7
+    },
+    {
+      "true_label": "SSH-Bruteforce",
+      "predicted_label": "DoS attacks-SlowHTTPTest",
+      "count": 7
+    },
+    {
+      "true_label": "DDOS attack-LOIC-UDP",
+      "predicted_label": "DDoS attacks-LOIC-HTTP",
+      "count": 5
+    }
+  ],
+  "harmful_attacks_ranked": [
+    {
+      "class_name": "DoS attacks-SlowHTTPTest",
+      "precision": 0.078125,
+      "recall": 1.0,
+      "f1_score": 0.14492753623188406,
+      "support": 5,
+      "true_positive": 5,
+      "false_positive": 59,
+      "false_negative": 0,
+      "predicted_as_class": 64,
+      "class_accuracy": 1.0,
+      "top_confused_with": null,
+      "top_confusion_count": 0,
+      "benign_false_positive": 52,
+      "precision_penalty": 0.921875,
+      "f1_penalty": 0.855072463768116,
+      "false_positive_ratio": 0.921875,
+      "normalized_false_positive": 0.16526610644257703,
+      "normalized_benign_false_positive": 0.14565826330532214,
+      "support_factor": 0.35,
+      "harm_score": 0.26316213102088654
+    },
+    {
+      "class_name": "DoS attacks-Hulk",
+      "precision": 0.9760032264569469,
+      "recall": 1.0,
+      "f1_score": 0.9878559036636392,
+      "support": 14520,
+      "true_positive": 14520,
+      "false_positive": 357,
+      "false_negative": 0,
+      "predicted_as_class": 14877,
+      "class_accuracy": 1.0,
+      "top_confused_with": null,
+      "top_confusion_count": 0,
+      "benign_false_positive": 357,
+      "precision_penalty": 0.023996773543053074,
+      "f1_penalty": 0.012144096336360821,
+      "false_positive_ratio": 0.023996773543053036,
+      "normalized_false_positive": 1.0,
+      "normalized_benign_false_positive": 1.0,
+      "support_factor": 1.0,
+      "harm_score": 0.2162342495327694
+    },
+    {
+      "class_name": "DDoS attacks-LOIC-HTTP",
+      "precision": 0.9941962897709608,
+      "recall": 0.9989413214391086,
+      "f1_score": 0.9965631573935401,
+      "support": 57619,
+      "true_positive": 57558,
+      "false_positive": 336,
+      "false_negative": 61,
+      "predicted_as_class": 57894,
+      "class_accuracy": 0.9989413214391086,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 54,
+      "benign_false_positive": 331,
+      "precision_penalty": 0.0058037102290392495,
+      "f1_penalty": 0.0034368426064599333,
+      "false_positive_ratio": 0.005803710229039279,
+      "normalized_false_positive": 0.9411764705882353,
+      "normalized_benign_false_positive": 0.927170868347339,
+      "support_factor": 1.0,
+      "harm_score": 0.190885985171144
+    },
+    {
+      "class_name": "Bot",
+      "precision": 0.9880276390504208,
+      "recall": 0.9992389123365392,
+      "f1_score": 0.9936016511867906,
+      "support": 14453,
+      "true_positive": 14442,
+      "false_positive": 175,
+      "false_negative": 11,
+      "predicted_as_class": 14617,
+      "class_accuracy": 0.9992389123365392,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 11,
+      "benign_false_positive": 175,
+      "precision_penalty": 0.011972360949579208,
+      "f1_penalty": 0.006398348813209442,
+      "false_positive_ratio": 0.011972360949579257,
+      "normalized_false_positive": 0.49019607843137253,
+      "normalized_benign_false_positive": 0.49019607843137253,
+      "support_factor": 1.0,
+      "harm_score": 0.10622360141184545
+    },
+    {
+      "class_name": "SSH-Bruteforce",
+      "precision": 0.9931238760181953,
+      "recall": 0.9981924508240297,
+      "f1_score": 0.9956517128009333,
+      "support": 9405,
+      "true_positive": 9388,
+      "false_positive": 65,
+      "false_negative": 17,
+      "predicted_as_class": 9453,
+      "class_accuracy": 0.9981924508240297,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 10,
+      "benign_false_positive": 65,
+      "precision_penalty": 0.006876123981804705,
+      "f1_penalty": 0.004348287199066658,
+      "false_positive_ratio": 0.006876123981804718,
+      "normalized_false_positive": 0.18207282913165265,
+      "normalized_benign_false_positive": 0.18207282913165265,
+      "support_factor": 1.0,
+      "harm_score": 0.04128350581608979
+    },
+    {
+      "class_name": "DDOS attack-LOIC-UDP",
+      "precision": 0.9548387096774194,
+      "recall": 0.8554913294797688,
+      "f1_score": 0.9024390243902439,
+      "support": 173,
+      "true_positive": 148,
+      "false_positive": 7,
+      "false_negative": 25,
+      "predicted_as_class": 155,
+      "class_accuracy": 0.8554913294797688,
+      "top_confused_with": "Benign",
+      "top_confusion_count": 20,
+      "benign_false_positive": 0,
+      "precision_penalty": 0.04516129032258065,
+      "f1_penalty": 0.09756097560975607,
+      "false_positive_ratio": 0.04516129032258064,
+      "normalized_false_positive": 0.0196078431372549,
+      "normalized_benign_false_positive": 0.0,
+      "support_factor": 0.75,
+      "harm_score": 0.0383923034201879
+    },
+    {
+      "class_name": "DDOS attack-HOIC",
+      "precision": 0.9994973864093285,
+      "recall": 1.0,
+      "f1_score": 0.9997486300336835,
+      "support": 19886,
+      "true_positive": 19886,
+      "false_positive": 10,
+      "false_negative": 0,
+      "predicted_as_class": 19896,
+      "class_accuracy": 1.0,
+      "top_confused_with": null,
+      "top_confusion_count": 0,
+      "benign_false_positive": 10,
+      "precision_penalty": 0.0005026135906714968,
+      "f1_penalty": 0.00025136996631647257,
+      "false_positive_ratio": 0.0005026135906714917,
+      "normalized_false_positive": 0.028011204481792718,
+      "normalized_benign_false_positive": 0.028011204481792718,
+      "support_factor": 1.0,
+      "harm_score": 0.005941520862806984
+    }
+  ],
+  "history_summary": {
+    "pretrain": {
+      "phase": "pretrain",
+      "available": true,
+      "epochs_recorded": 33,
+      "last_loss": 0.6218387982614548,
+      "best_loss": 0.6198118968484781,
+      "best_loss_epoch": 30,
+      "selection_metric": "val_0_unsup_loss_numpy",
+      "selection_mode": "min",
+      "selection_value": 0.6927589774131775,
+      "selection_epoch": 17
+    },
+    "finetune": {
+      "phase": "finetune",
+      "available": true,
+      "epochs_recorded": 93,
+      "last_loss": 0.002454310837185725,
+      "best_loss": 0.0021307695478727916,
+      "best_loss_epoch": 83,
+      "selection_metric": "valid_f1_macro",
+      "selection_mode": "max",
+      "selection_value": 0.987489517083212,
+      "selection_epoch": 77
+    }
+  },
+  "history_files": {
+    "pretrain": "attack_pruning_search/runs/run_09/reports/All_pretrain_history.csv",
+    "finetune": "attack_pruning_search/runs/run_09/reports/All_finetune_history.csv",
+    "pretrain_raw": "attack_pruning_search/runs/run_09/reports/All_pretrain_history_raw.json",
+    "finetune_raw": "attack_pruning_search/runs/run_09/reports/All_finetune_history_raw.json",
+    "pretrain_live": "attack_pruning_search/runs/run_09/reports/All_pretrain_history_live.csv",
+    "finetune_live": "attack_pruning_search/runs/run_09/reports/All_finetune_history_live.csv"
+  },
+  "report_files": {
+    "feature_importance_csv": "attack_pruning_search/runs/run_09/reports/All_feature_importance.csv",
+    "confusion_matrix_csv": "attack_pruning_search/runs/run_09/reports/All_confusion_matrix.csv",
+    "top_confusions_csv": "attack_pruning_search/runs/run_09/reports/All_top_confusions.csv",
+    "class_metrics_csv": "attack_pruning_search/runs/run_09/reports/All_class_metrics.csv",
+    "metrics_summary_csv": "attack_pruning_search/runs/run_09/reports/All_metrics_summary.csv"
+  },
+  "weights_files": {
+    "pretrain_model": "attack_pruning_search/runs/run_09/weights/All_pretrain.zip",
+    "finetune_model": "attack_pruning_search/runs/run_09/weights/All_finetune.zip"
+  },
+  "resume_used_existing_pretrain": false
+}

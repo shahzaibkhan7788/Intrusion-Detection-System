@@ -1,0 +1,23 @@
+{
+  "run_index": 9,
+  "strategy_used": "current_plus_mixed_pair",
+  "removed_attacks": [
+    "Brute Force -Web",
+    "Brute Force -XSS",
+    "DoS attacks-GoldenEye",
+    "DoS attacks-Slowloris",
+    "FTP-BruteForce",
+    "Infilteration",
+    "SQL Injection"
+  ],
+  "kept_attacks": [
+    "Bot",
+    "DDOS attack-HOIC",
+    "DDOS attack-LOIC-UDP",
+    "DDoS attacks-LOIC-HTTP",
+    "DoS attacks-Hulk",
+    "DoS attacks-SlowHTTPTest",
+    "SSH-Bruteforce"
+  ],
+  "target_macro_f1": 0.8
+}

@@ -2,7 +2,7 @@
 
 # TabNet : Attentive Interpretable Tabular Learning
 
-This is a pyTorch implementation of Tabnet (Arik, S. O., & Pfister, T. (2019). TabNet: Attentive Interpretable Tabular Learning. arXiv preprint arXiv:1908.07442.) https://arxiv.org/pdf/1908.07442.pdf. Please note that some different choices have been made overtime to improve the library which can differ from the orginal paper.
+This is a pyTorch implementation of Tabnet (Arik, S. O., & Pfister, T. (2019). TabNet: Attentive Interpretable Tabular Learning. arXiv preprint arXiv:1908.07442.) <https://arxiv.org/pdf/1908.07442.pdf>. Please note that some different choices have been made overtime to improve the library which can differ from the orginal paper.
 
 <!--- BADGES: START --->
 [![CircleCI](https://circleci.com/gh/dreamquark-ai/tabnet.svg?style=svg)](https://circleci.com/gh/dreamquark-ai/tabnet)
@@ -68,6 +68,12 @@ If you wan to use it locally within a docker container:
 
 - `make notebook` inside the same terminal. You can then follow the link to a jupyter notebook with tabnet installed.
 
+# How to download weights>
+
+- for this visit my google drive and download its file, make sure that set its path..
+   the weights are saved here..
+   <https://drive.google.com/drive/folders/1QgYCpKI6VRLVkZYIqzTh5XShYiO0iwJ5?usp=sharing>
+
 # What is new ?
 
 - from version **> 4.0** attention is now embedding aware. This aims to maintain a good attention mechanism even with large number of embedding. It is also now possible to specify attention groups (using `grouped_features`). Attention is now done at the group level and not feature level. This is especially useful if a dataset has a lot of columns coming from on single source of data (exemple: a text column transformed using TD-IDF).
@@ -116,14 +122,13 @@ The targets on `y_train/y_valid` should contain a unique type (e.g. they must al
 ### Default eval_metric
 
 A few classic evaluation metrics are implemented (see further below for custom ones):
+
 - binary classification metrics : 'auc', 'accuracy', 'balanced_accuracy', 'logloss'
 - multiclass classification : 'accuracy', 'balanced_accuracy', 'logloss'
 - regression: 'mse', 'mae', 'rmse', 'rmsle'
 
-
 Important Note : 'rmsle' will automatically clip negative predictions to 0, because the model can predict negative values.
 In order to match the given scores, you need to use `np.clip(clf.predict(X_predict), a_min=0, a_max=None)` when doing predictions.
-
 
 ### Custom evaluation metrics
 
@@ -151,7 +156,7 @@ clf.fit(
 
 ```
 
-A specific customization example notebook is available here : https://github.com/dreamquark-ai/tabnet/blob/develop/customizing_example.ipynb
+A specific customization example notebook is available here : <https://github.com/dreamquark-ai/tabnet/blob/develop/customizing_example.ipynb>
 
 # Semi-supervised pre-training
 
@@ -201,10 +206,10 @@ A complete example can be found within the notebook `pretraining_example.ipynb`.
 It is now possible to apply custom data augmentation pipeline during training.
 Templates for ClassificationSMOTE and RegressionSMOTE have been added in `pytorch-tabnet/augmentations.py` and can be used as is.
 
-
 # Easy saving and loading
 
 It's really easy to save and re-load a trained model, this makes TabNet production ready.
+
 ```
 # save tabnet model
 saving_path_name = "./tabnet_model_test_1"
@@ -247,7 +252,7 @@ loaded_clf.load_model(saved_filepath)
     A value close to 1 will make mask selection least correlated between layers.
     Values range from 1.0 to 2.0.
 
-- `cat_idxs` : list of int (default=[] - Mandatory for embeddings) 
+- `cat_idxs` : list of int (default=[] - Mandatory for embeddings)
 
     List of categorical features indices.
 
@@ -285,7 +290,7 @@ loaded_clf.load_model(saved_filepath)
 - `clip_value` : float (default None)
 
     If a float is given this will clip the gradient at clip_value.
-    
+
 - `lambda_sparse` : float (default = 1e-3)
 
     This is the extra sparsity loss coefficient as proposed in the original paper. The bigger this coefficient is, the sparser your model will be in terms of feature selection. Depending on the difficulty of your problem, reducing this value could help.
@@ -296,7 +301,7 @@ loaded_clf.load_model(saved_filepath)
 
 - `optimizer_params`: dict (default=dict(lr=2e-2))
 
-    Parameters compatible with optimizer_fn used initialize the optimizer. Since we have Adam as our default optimizer, we use this to define the initial learning rate used for training. As mentionned in the original paper, a large initial learning rate of ```0.02 ```  with decay is a good option.
+    Parameters compatible with optimizer_fn used initialize the optimizer. Since we have Adam as our default optimizer, we use this to define the initial learning rate used for training. As mentionned in the original paper, a large initial learning rate of ```0.02```  with decay is a good option.
 
 - `scheduler_fn` : torch.optim.lr_scheduler (default=None)
 
@@ -324,7 +329,7 @@ loaded_clf.load_model(saved_filepath)
     This allows the model to share it's attention accross feature inside a same group.
     This can be especially useful when your preprocessing generates correlated or dependant features: like if you use a TF-IDF or a PCA on a text column.
     Note that feature importance will be exactly the same between features on a same group.
-    Please also note that embeddings generated for a categorical variable are always inside a same group. 
+    Please also note that embeddings generated for a categorical variable are always inside a same group.
 
 - `n_shared_decoder` : int (default=1)
 
@@ -359,7 +364,7 @@ loaded_clf.load_model(saved_filepath)
 - `max_epochs` : int (default = 200)
 
     Maximum number of epochs for trainng.
-    
+
 - `patience` : int (default = 10)
 
     Number of consecutive epochs without improvement before performing early stopping.
